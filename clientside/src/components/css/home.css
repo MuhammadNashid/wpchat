@@ -16,21 +16,7 @@
     height: 100vh;
   }
   
-  /* .sidebar {
-    width: 180px;
-    background-color: #008080;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 20px 0;
-    text-align: center;
-  }
   
-  .nav-links {
-    list-style-type: none;
-    padding: 0;
-  }
   
   .nav-button {
     background: none;
@@ -43,53 +29,62 @@
   
   /* Sidebar styles */
   .sidebar {
-    width: 110px;
-    background-color: #008080;
-    color: white;
     display: flex;
-    flex-direction: column; /* Stack the nav items vertically */
-    justify-content: flex-start; /* Align items to the start */
-    padding: 20px 0;
-    text-align: center;
-    height: 100%;
+    justify-content: space-between;
+    height: 100vh;
+    background-color: #074f96;
+    padding: 1rem;
+  }
+  
+  .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    background-color: #008080;
+    height: 36pc;
   }
   
   .nav-links {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    gap: 20px; /* Adds space between the items */
+    margin: 0;
+  }
+  
+  .top-links {
+    margin-bottom: auto; /* Pushes the bottom links to the bottom */
+  }
+  
+  .bottom-links {
+    margin-top: auto; /* Ensures these links stay at the bottom */
   }
   
   .nav-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
     background: none;
     border: none;
     color: white;
-    font-size: 20px;
+    font-size: 1rem;
     cursor: pointer;
-    transition: color 0.3s ease;
+    transition: background-color 0.3s ease;
   }
-  
-  .nav-button:hover {
-    color: #00b3b3; /* Change color on hover */
-  }
-  
   .nav-icon {
-    font-size: 25px;
-    margin-bottom: 10px; /* Space between icon and text */
+    font-size: 1.25rem;
   }
+  
   
   /* Ensure the sidebar takes full height */
   .home-container {
     display: flex;
-    height: 100vh;
+    height: 36pc;
     flex-direction: row;
   }
   
   
   .nav-button:hover {
     color: #00b3b3;
+    background-color: white;
   }
   
   .nav-icon {

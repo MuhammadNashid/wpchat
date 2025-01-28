@@ -187,29 +187,32 @@ const Home = ({ setUser }) => {
   return (
     <div className="home-container">
       <div className="sidebar">
-        <nav>
-          <ul className="nav-links">
-            <li>
-              <button onClick={handleChatClick} className="nav-button">
-                <FaComments className="nav-icon" />
-                Chats
-              </button>
-            </li>
-            <li>
-              <button onClick={handleProfileClick} className="nav-button">
-                <FaUser className="nav-icon" />
-                Profile
-              </button>
-            </li>
-            <li>
-              <button onClick={handleLogout} className="nav-button">
-                <FaSignOutAlt className="nav-icon" />
-                Logout
-              </button>
-            </li>
-          </ul>
-        </nav>
-      </div>
+  <nav className="sidebar-nav">
+    <ul className="nav-links top-links">
+      <li>
+        <button onClick={handleChatClick} className="nav-button">
+          <FaComments className="nav-icon" />
+          Chats
+        </button>
+      </li>
+    </ul>
+    <ul className="nav-links bottom-links">
+      <li>
+        <button onClick={handleProfileClick} className="nav-button">
+          <FaUser className="nav-icon" />
+          Profile
+        </button>
+      </li>
+      <li>
+        <button onClick={handleLogout} className="nav-button">
+          <FaSignOutAlt className="nav-icon" />
+          Logout
+        </button>
+      </li>
+    </ul>
+  </nav>
+</div>
+
 
       <div className="main-content">
         {currentPage === "chats" ? (
