@@ -503,3 +503,23 @@ export async function deleteMessage(req,res) {
       return res.status(404).send({msg:"Error"})
   }
 }
+
+export async function deleteContact(req, res) {
+  try {
+    const { _id } = req.params; // Extract the contact ID from request parameters
+    const userId = req.user; // Extract the user ID from the request (assumed authenticated)
+
+    // Find the contact that belongs to the user
+    const contact = await contactSchema.findOne({ _id, userId });
+
+    if (!contact)
+      return res.status(404).send({ msg: "Cannot delete others' contact" });
+
+    // Delete the contact if it exists and belongs to the user
+    const deleteContact = await contactSchema.deleteOne({ _id, userId });
+
+    return res.status(200).send({ msg: "Contact deleted successfully" });
+  } catch (error) {
+    return res.status(500).send({ msg: "Error deleting contact", error });
+  }
+}
