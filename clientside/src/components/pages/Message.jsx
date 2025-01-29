@@ -91,7 +91,6 @@ const Message = ({ setUser }) => {
   };
 
   const handleSearch = () => {
-    // Implement search functionality here if needed
     console.log("Search triggered");
   };
 
@@ -114,7 +113,6 @@ const Message = ({ setUser }) => {
           </div>
           <h2>{receiver.username}</h2>
         </Link>
-        {/* Three dots menu for options */}
         <div className="menu">
           <button onClick={() => setShowOptionsMenu(!showOptionsMenu)}>
             <FaEllipsisV size={15} />

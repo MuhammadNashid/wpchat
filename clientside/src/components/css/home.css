@@ -1,5 +1,5 @@
 /* Global styles */
-* {
+ * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -15,9 +15,6 @@
     display: flex;
     height: 100vh;
   }
-  
-  
-  
   .nav-button {
     background: none;
     border: none;
@@ -25,14 +22,14 @@
     font-size: 20px;
     margin-bottom: 20px;
     cursor: pointer;
-  } */
+  } 
   
-  /* Sidebar styles */
+
   .sidebar {
     display: flex;
     justify-content: space-between;
     height: 100vh;
-    background-color: #074f96;
+    background-color: #008080;
     padding: 1rem;
   }
   
@@ -50,11 +47,11 @@
   }
   
   .top-links {
-    margin-bottom: auto; /* Pushes the bottom links to the bottom */
+    margin-bottom: auto;
   }
   
   .bottom-links {
-    margin-top: auto; /* Ensures these links stay at the bottom */
+    margin-top: auto;
   }
   
   .nav-button {
@@ -72,9 +69,7 @@
   .nav-icon {
     font-size: 1.25rem;
   }
-  
-  
-  /* Ensure the sidebar takes full height */
+
   .home-container {
     display: flex;
     height: 36pc;
@@ -92,15 +87,15 @@
     margin-bottom: 5px;
   }
   
-  /* Main content area */
+
   .main-content {
     flex: 1;
-    background-color: rgb(14, 12, 12);
+    background-color: white;
     padding: 20px;
     overflow-y: auto;
   }
   
-  /* Chat list styles */
+
   .page-title {
     font-size: 24px;
     font-weight: bold;
@@ -122,7 +117,7 @@
   .contact-card {
     display: flex;
     justify-content: space-between;
-    background-color: #1d1b1b;
+    background-color: rgb(204, 197, 197);
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -154,12 +149,12 @@
   .contact-username {
     font-weight: bold;
     font-size: 16px;
-    color: white;
+    color: rgb(5, 5, 5);
   }
   
   .contact-last-message {
     font-size: 14px;
-    color: #888;
+    color: #222121;
   }
   
   .contact-time {
@@ -185,8 +180,6 @@
     justify-content: center;
     align-items: center;
   }
-  
-  /* Button for new chat */
   .new-chat-button {
     background-color: #25d366;
     color: white;
@@ -206,7 +199,6 @@
     font-size: 30px;
   }
   
-  /* Profile page styles */
   .profile-container {
     display: flex;
     flex-direction: column;
@@ -281,7 +273,7 @@
     background-color: #00b3b3;
   }
   
-  /* Search input */
+
   .search-input {
     width: 100%;
     padding: 10px;
@@ -294,4 +286,4 @@
   .search-input:focus {
     outline: none;
     border-color: #00b3b3;
-  }
+  } 

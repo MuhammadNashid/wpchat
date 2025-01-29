@@ -37,17 +37,36 @@ const Home = ({ setUser }) => {
     });
   }
 
+  // const handleOpenChat = async (_id) => {
+  //   try {
+  //     const res = await axios.get(`${Api()}/openchat/${_id}`, {
+  //       headers: { "authorization": `Bearer ${token}` },
+  //     });
+  //     fetchUser();
+  //   } catch (error) {
+  //     console.log(error.response);
+  //   }
+  // };
+
   const handleOpenChat = async (_id) => {
     try {
       const res = await axios.get(`${Api()}/openchat/${_id}`, {
         headers: { "authorization": `Bearer ${token}` },
       });
+  
+      // Reset unreadCount to 0 for the opened chat
+      setChatMembers((prev) =>
+        prev.map((member) =>
+          member._id === _id ? { ...member, unreadCount: 0 } : member
+        )
+      );
+  
       fetchUser();
     } catch (error) {
       console.log(error.response);
     }
   };
-
+  
   const handleProfileClick = () => {
     setCurrentPage("profile");
   };
@@ -99,15 +118,40 @@ const Home = ({ setUser }) => {
     fetchUser();
   }, []);
 
+  // const fetchUser = async () => {
+  //   if (token) {
+  //     try {
+  //       const res = await axios.get(`${Api()}/getuser`, {
+  //         headers: { "authorization": `Bearer ${token}` },
+  //       });
+  //       setProfileData(res.data.user);
+  //       setUser(res.data.user.username);
+  //       setChatMembers([...new Map(res.data.chatMembers.map(member => [member._id, member])).values()].reverse());
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   } else {
+  //     navigate('/signin');
+  //   }
+  // };
+
+
   const fetchUser = async () => {
     if (token) {
       try {
         const res = await axios.get(`${Api()}/getuser`, {
           headers: { "authorization": `Bearer ${token}` },
         });
+  
         setProfileData(res.data.user);
         setUser(res.data.user.username);
-        setChatMembers([...new Map(res.data.chatMembers.map(member => [member._id, member])).values()].reverse());
+  
+        const chatData = res.data.chatMembers.map(member => ({
+          ...member,
+          unreadCount: member.unreadCount || 0,  // Ensure unreadCount is defined
+        }));
+  
+        setChatMembers([...new Map(chatData.map(member => [member._id, member])).values()].reverse());
       } catch (error) {
         console.log(error);
       }
@@ -115,6 +159,7 @@ const Home = ({ setUser }) => {
       navigate('/signin');
     }
   };
+  
 
   const handleLogout = () => {
     Swal.fire({
@@ -241,8 +286,9 @@ const Home = ({ setUser }) => {
                         </p>
                       )}
                       {member.unreadCount > 0 && (
-                        <div className="unread-count">{member.unreadCount}</div>
-                      )}
+  <div className="unread-count">{member.unreadCount}</div>
+)}
+
                     </div>
                   </div>
                 </Link>
