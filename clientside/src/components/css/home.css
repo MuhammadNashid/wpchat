@@ -1,5 +1,5 @@
 /* Global styles */
- * {
+ /* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -28,7 +28,7 @@
   .sidebar {
     display: flex;
     justify-content: space-between;
-    height: 100vh;
+    height: 36.5pc;
     background-color: #008080;
     padding: 1rem;
   }
@@ -37,7 +37,7 @@
     display: flex;
     flex-direction: column;
     background-color: #008080;
-    height: 36pc;
+    height: 35pc;
   }
   
   .nav-links {
@@ -72,14 +72,13 @@
 
   .home-container {
     display: flex;
-    height: 36pc;
+    height: 36.5pc;
     flex-direction: row;
   }
   
   
   .nav-button:hover {
-    color: #00b3b3;
-    background-color: white;
+    color: #0bf7f7;
   }
   
   .nav-icon {
@@ -286,4 +285,376 @@
   .search-input:focus {
     outline: none;
     border-color: #00b3b3;
-  } 
+  }  */
+
+  /* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #beb9b9;
+  color: #333;
+}
+
+.home-container {
+  display: flex;
+  height: 100vh;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.sidebar {
+  display: flex;
+  justify-content: space-between;
+  height: 36.5pc;
+  background-color: #008080;
+  padding: 1rem;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  background-color: #008080;
+  height: 35pc;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.top-links {
+  margin-bottom: auto;
+}
+
+.bottom-links {
+  margin-top: auto;
+}
+
+.nav-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-icon {
+  font-size: 1.25rem;
+}
+
+.home-container {
+  display: flex;
+  height: 36.5pc;
+  flex-direction: row;
+}
+
+.nav-button:hover {
+  color: #0bf7f7;
+}
+
+.nav-icon {
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+
+.main-content {
+  flex: 1;
+  background-color: white;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.contacts-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.infde {
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact-card {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(204, 197, 197);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.contact-card:hover {
+  transform: scale(1.02);
+}
+
+.contact-info {
+  display: flex;
+  gap: 10px;
+}
+
+.contact-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-username {
+  font-weight: bold;
+  font-size: 16px;
+  color: rgb(5, 5, 5);
+}
+
+.contact-last-message {
+  font-size: 14px;
+  color: #222121;
+}
+
+.contact-time {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: right;
+}
+
+.message-time {
+  font-size: 12px;
+  color: #666;
+}
+
+.unread-count {
+  background-color: #25d366;
+  color: white;
+  font-size: 12px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-chat-button {
+  background-color: #25d366;
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.new-chat-icon {
+  font-size: 30px;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.profile-edit-label {
+  position: relative;
+  cursor: pointer;
+  background-color: #008080;
+  border-radius: 50%;
+  padding: 10px;
+  display: inline-block;
+  margin-top: -30px;
+  color: white;
+}
+
+.profile-file-input {
+  display: none;
+}
+
+.account-details {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.profile-actions {
+  margin-top: 30px;
+}
+
+.edit-button,
+.save-button {
+  background-color: #008080;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.edit-button:hover,
+.save-button:hover {
+  background-color: #00b3b3;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #00b3b3;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .home-container {
+      flex-direction: column;
+  }
+  
+  .sidebar {
+      flex-direction: column;
+      height: auto;
+      padding: 10px;
+  }
+  
+  .sidebar-nav {
+      flex-direction: row;
+      justify-content: space-around;
+      height: auto;
+  }
+  
+  .main-content {
+      padding: 15px;
+  }
+
+  .contact-card {
+      flex-direction: column;
+  }
+
+  .profile-container {
+      align-items: flex-start;
+  }
+
+  .profile-image img {
+      width: 80px;
+      height: 80px;
+  }
+
+  .input-group input,
+  .search-input {
+      font-size: 14px;
+  }
+
+  .page-title {
+      font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-card {
+      flex-direction: column;
+      padding: 8px;
+  }
+
+  .contact-username {
+      font-size: 14px;
+  }
+
+  .contact-last-message {
+      font-size: 12px;
+  }
+
+  .nav-button {
+      font-size: 16px;
+  }
+
+  .profile-image img {
+      width: 70px;
+      height: 70px;
+  }
+
+  .edit-button,
+  .save-button {
+      padding: 8px 16px;
+      font-size: 14px;
+  }
+
+  .new-chat-button {
+      width: 40px;
+      height: 40px;
+      font-size: 24px;
+  }
+
+  .search-input {
+      font-size: 14px;
+  }
+}
